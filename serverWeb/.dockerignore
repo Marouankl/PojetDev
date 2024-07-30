@@ -1,0 +1,38 @@
+# Ignorer les fichiers de log
+*.log
+
+# Ignorer les répertoires de cache et de dépendances
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignorer les fichiers de configuration locale
+.env
+*.env.local
+*.env.*.local
+
+# Ignorer les fichiers de cache des éditeurs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorer les fichiers générés
+dist/
+*.tgz
+
+# Ignorer les fichiers de test
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Ignorer les fichiers temporaires
+*.tmp
+*.swp
+*.bak
+
+# Ignorer les fichiers de build non nécessaires
+*.md
+*.gitignore

@@ -1,0 +1,32 @@
+- name: Build and deploy Docker container  # Nom du playbook
+  hosts: webServer  # Spécifie les hôtes sur lesquels ce playbook doit être exécuté
+  become: true  # Indique que les tâches doivent être exécutées avec des privilèges d'administrateur
+  tasks:  # Début de la section des tâches
+
+    - name: Ensure the destination directory exists  # Crée le répertoire de destination si nécessaire
+      file:
+        path: /home/ubuntu/ProjetDevops/serverWeb
+        state: directory
+        mode: '0755'
+
+    - name: Copy application files to remote  # Nom de la tâche pour copier les fichiers de l'application vers le serveur distant
+      synchronize:
+        src: /home/klai/ProjetDevops/serverWeb/  # Chemin source des fichiers de l'application sur la machine locale
+        dest: /home/ubuntu/ProjetDevops/serverWeb  # Chemin de destination sur le serveur distant
+
+    - name: Build Docker image  # Nom de la tâche pour construire l'image Docker
+      community.docker.docker_image_build:
+        name: vuejs_app:latest
+        path: /home/ubuntu/ProjetDevops/serverWeb
+        dockerfile: Dockerfile
+        # timeout: 2000
+         
+
+    - name: Run Docker container  # Nom de la tâche pour exécuter le conteneur Docker
+      community.docker.docker_container:
+        name: vuejs_container  # Nom du conteneur Docker
+        image: vuejs_app:latest  # Image Docker à utiliser pour le conteneur
+        state: started  # S'assure que le conteneur est démarré
+        restart_policy: always  # Définit la politique de redémarrage du conteneur
+        ports:  # Mapping des ports
+          - "80:8080"  # Redirige le port 80 du conteneur vers le port 80 de l'hôte
