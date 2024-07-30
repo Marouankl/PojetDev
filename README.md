@@ -1,42 +1,19 @@
 # Projet Devops
 
 1. git clone : https://github.com/Marouankl/PojetDev
-
-## Partie Terraform créer une instance EC2 aws "Ubuntu 22.04" 
-
-Technologier utiliser :Vuejs
-
-### installation :
-1 choix 1 virtuel:
-activier wsl 
-installer ubuntu 22.04
-    -> installer amzon cli :sudo apt-get update
-                            sudo apt-get install awscli
-    -> installer terraform:wget https://releases.hashicorp.com/terraform/1.5.6/terraform_1.5.6_linux_amd64.zip
-                        unzip terraform_1.5.6_linux_amd64.zip
-                        sudo mv terraform /usr/local/bin/
-      
-    npm create vue@latest my-project
-2 choix local :
-    -> installer amzon cli :sudo apt-get update
-                            sudo apt-get install awscli
-    -> installer terraform:wget https://releases.hashicorp.com/terraform/1.5.6/terraform_1.5.6_linux_amd64.zip
-                        unzip terraform_1.5.6_linux_amd64.zip
-                        sudo mv terraform /usr/local/bin/
-
-cd terraform:
+2. cd terraform:
 
  terrafrom init
  terraform validate
  terraform plan
  terraform apply 
 
-cd serverWeb:
+3. cd serverWeb:
 
 npm install 
 npm run serve
 
-cd projetDevops
+4. cd projetDevops
 
 Pour connecter avec l'instance sur EC2:
 1. ssh -i ~/.ssh/nom-ficher.pem ubuntu@adresse_ip
@@ -47,6 +24,28 @@ Pour connecter avec l'instance sur EC2:
 #### test :
 
 ping adresse_ip 
+
+## Partie Terraform créer une instance EC2 aws "Ubuntu 22.04" 
+
+Technologier utiliser :Vuejs
+
+### installation :
+1 choix 1 virtuel:
+activier wsl 
+    -> installer ubuntu 22.04
+    -> installer amzon cli :sudo apt-get update
+                            sudo apt-get install awscli
+    -> installer terraform:wget https://releases.hashicorp.com/terraform/1.5.6/terraform_1.5.6_linux_amd64.zip
+                        unzip terraform_1.5.6_linux_amd64.zip
+                        sudo mv terraform /usr/local/bin/
+2 choix local :
+    -> installer amzon cli :sudo apt-get update
+                            sudo apt-get install awscli
+    -> installer terraform:wget https://releases.hashicorp.com/terraform/1.5.6/terraform_1.5.6_linux_amd64.zip
+                        unzip terraform_1.5.6_linux_amd64.zip
+                        sudo mv terraform /usr/local/bin/
+
+
 
 
 #### configuration Terraform : 
