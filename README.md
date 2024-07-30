@@ -39,10 +39,10 @@ npm run serve
 cd projetDevops
 
 Pour connecter avec l'instance sur EC2:
-ssh -i ~/.ssh/nom-ficher.pem ubuntu@adresse_ip
-Pour voir l'image docker
-sudo docker --version
-sudo docker ps 
+1. ssh -i ~/.ssh/nom-ficher.pem ubuntu@adresse_ip
+2. Pour voir l'image docker
+##### sudo docker --version
+#####sudo docker ps 
 
 #### test :
 
