@@ -1,6 +1,6 @@
 # Projet Devops
 
-1. git clone :
+1. git clone : https://github.com/Marouankl/PojetDev
 
 ## Partie Terraform créer une instance EC2 aws "Ubuntu 22.04" 
 
