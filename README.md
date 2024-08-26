@@ -3,7 +3,7 @@
 1. git clone : https://github.com/Marouankl/PojetDev
 2. cd terraform:
 
- terrafrom init
+ terraform init
  terraform validate
  terraform plan
  terraform apply 
